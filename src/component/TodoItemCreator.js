@@ -11,6 +11,7 @@ function TodoItemCreator() {
 
     const [inputValue, setInputValue] = useState('');
     const setTodoList = useSetRecoilState(todoListState);
+    // useSetRecoilState : 쓰기 전용 함수
 
     const addItem = () => {
         setTodoList((oldTodoList) => [

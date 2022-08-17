@@ -7,6 +7,7 @@ import TodoItem from './TodoItem';
 function TodoList() {
 
     const todoList = useRecoilValue(todoListState);
+    // useRecoilValue : 읽기 전용 함수
 
     return (
         <>

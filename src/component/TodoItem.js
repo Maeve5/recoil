@@ -13,6 +13,7 @@ const removeItemAtIndex = (arr, index) => {
 function TodoItem({item}) {
 
     const [todoList, setTodoList] = useRecoilState(todoListState);
+    // useRecoilState : atom을 읽고 쓰는 훅
     const index = todoList.findIndex((listItem) => listItem === item);
 
     const editItemText = ({target: {value}}) => {
@@ -41,12 +42,12 @@ function TodoItem({item}) {
 
     return (
         <div>
-            <input type='text' value={item.text} onChange={editItemText} />
             <input
                 type='checkbox'
                 checked={item.isComplete}
                 onChange={toggleItemCompletion}
             />
+            <input type='text' value={item.text} onChange={editItemText} />
             <button onClick={deleteItem}>X</button>
         </div>
     );
